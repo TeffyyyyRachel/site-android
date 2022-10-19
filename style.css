@@ -1,0 +1,191 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+@font-face {
+    font-family: 'Android' ;
+    src: url(pacote-projeto-d010/fontes/idroid.otf) format('opentype');
+    font-weight: normal;
+}
+
+:root{ /* Usar variáveis é bom, pois é apenas necessário mudar a cor nas variáveis dentro do root para mudar a cor ou a fonte ou qualquer outro valor de todas as coisas que utilizam a variável de uma só vez */
+    --cor1: #c5ebd6;
+    --cor2: #83e1ad;
+    --cor3: #3ddc84;
+    --cor4: #2fa866;
+    --cor5: #1a5c37;
+    --cor6: #063d1e;
+
+    --fonte-padrao: Arial, Verdana, Helvetica, sans-serif;
+    --fonte-destaque: 'Bebas Neue', cursive;
+    --fonte-android: 'Android', cursive;
+}
+
+*{ /* Configuração global e que afeta a todos os elementos */
+    margin: 0px;
+}
+
+body{
+    background-color: var(--cor1);
+    font-family: var(--fonte-padrao);
+}
+
+a.externo::after {
+    content: '\1F517'; /*É assim que se coloca o código de um emoji em CSS*/
+}
+
+header{
+    background-image: linear-gradient(to bottom, var(--cor3), var(--cor5));
+    min-height: 150px;
+    text-align: center;
+}
+
+header > h1{
+    color: white;
+    font-family: var(--fonte-destaque);
+    padding-top: 35px;
+    margin-bottom: 10px;
+    font-size: 3em;
+    text-shadow: 3px 4px 3px #00000059;
+    font-weight: normal;
+}
+
+header > p {
+    color: white;
+    font-size: 1.2em;
+    font-family: var(--fonte-padrao);
+    max-width: 500px;
+    margin: auto;
+    margin-bottom: 20px;
+    padding-right: 10px;
+    padding-left: 10px;
+    text-shadow: 3px 4px 3px #00000059;
+}
+
+nav {
+    background-color: var(--cor5);
+    padding: 5px;
+    box-shadow: 0px 3px 4px 0px #00000075;
+    padding: 10px;
+}
+
+nav > a {
+    color: white;
+    text-decoration: none;
+    margin-right: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    transition-duration: 0.5s;
+}
+
+nav > a:hover {
+    background-color: var(--cor2);
+    color: var(--cor5);
+}
+
+main {
+    background-color: white;
+    min-width: 280px;
+    max-width: 800px;
+    padding: 20px;
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 30px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.336);
+    border-radius: 10px;
+}
+
+main h1 { 
+    font-family: var(--fonte-android);
+    color: var(--cor5);
+    font-size: 1.8em;
+} /* a diferença entre usar ou não o símbolo de 'maior que' para indicar algo que está dentro de outro, é que ao não usar o código se torna global para a primeira tag, então a edição afeta todas as tag h1 independente de estar dentro de uma tag article ainda, por exemplo */
+
+main h2 {
+    font-family: var(--fonte-android);
+    color: var(--cor4);
+    font-size: 1.3em;
+    background-image: linear-gradient(to right, var(--cor2), transparent);
+    padding: 5px;
+    font-weight: normal;
+}
+
+main img {
+    width: 100%;
+}
+
+main img.pequena {
+    max-width: 350px;
+    display: block;
+    margin: auto;
+}
+
+main p{ 
+    margin: 15px 0px; /* vertical - horizontal */
+    text-align: justify;
+    text-indent: 30px;
+    line-height: 1.5em;
+    font-size: 1.3em;
+}
+
+main strong {
+    color: var(--cor4);
+}
+
+main a {
+    text-decoration: none;
+    font-weight: bold;
+    color: var(--cor6);
+}
+
+main a:hover {
+    text-decoration: underline;
+}
+
+div.video {
+    background-color: var(--cor5);
+    margin: 0px -20px;
+    padding: 20px;
+    position: relative;
+    padding-bottom: 43%;
+}
+
+div.video > iframe {
+    position: absolute;
+    top: 6%;
+    left: 16%;
+    width: 70%;
+    height: 85%;
+}
+
+/* Acima, está a gambiarra para centralizar um vídeo iframe */
+
+aside{
+    background-color: var(--cor1);
+    padding: 15px;
+    border-radius: 10px;
+    margin-top: 30px;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.212);
+}
+
+aside > h3 {
+    background-color: var(--cor5);
+    color: white;
+    margin: -15px -15px 0px -15px; /* valor negativo cresce a margem para fora, então ao invés de afastar as coisas do elemento, ele cresce o elemento e aproxima a borda dos elementos ao redor */
+    padding: 10px;
+    border-radius: 10px 10px 0px 0px;
+}
+
+aside > ul {
+    columns: 2;
+    font-size: 1.2em;
+}
+
+footer{
+    background-color: var(--cor6);
+    color: white;
+    text-align: center;
+    padding: 10px;
+    padding-bottom: 20px;
+    font-size: 1.3em;
+}
